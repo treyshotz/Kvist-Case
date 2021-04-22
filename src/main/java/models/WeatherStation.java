@@ -17,6 +17,12 @@ public class WeatherStation implements PropertyChangeListener {
  	private int temperature = 0;
 	int humidity = 0;
 	
+	public WeatherStation(Unit ...units) {
+		for(Unit unit : units) {
+			unit.addPropertyChangeListener(this);
+		}
+	}
+	
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
 		if(evt.getPropertyName().equals("humidity")) {

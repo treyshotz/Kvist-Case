@@ -8,7 +8,7 @@ import java.beans.PropertyChangeSupport;
 @AllArgsConstructor
 @Getter
 @Setter
-public class AirUnit {
+public class AirUnit implements Unit{
 	
 	private int humidity;
 	private PropertyChangeSupport changeSupport;

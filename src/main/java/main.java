@@ -4,11 +4,9 @@ import models.WeatherStation;
 
 public class main {
 	public static void main(String[] args) {
-		WeatherStation system = new WeatherStation();
 		WaterUnit waterUnit = new WaterUnit();
 		AirUnit airUnit = new AirUnit();
-		waterUnit.addPropertyChangeListener(system);
-		airUnit.addPropertyChangeListener(system);
+		WeatherStation system = new WeatherStation(waterUnit, airUnit);
 		
 		waterUnit.setTemperature(3);
 		airUnit.setHumidity(4);
